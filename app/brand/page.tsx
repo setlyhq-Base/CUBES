@@ -114,7 +114,7 @@ export default function BrandPage() {
             <p className="text-lg text-neutral-700">
               <span className="font-semibold text-forest-700">The result?</span> People skip cooking altogether, 
               resorting to expensive takeout or unhealthy processed meals. 
-              We believe there's a better way.
+              We believe there&apos;s a better way.
             </p>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function BrandPage() {
           <div className="bg-forest-600 rounded-2xl p-8 md:p-12">
             <div className="prose prose-lg prose-invert max-w-none">
               <p className="text-cream-100 text-lg leading-relaxed mb-6">
-                Hi, I'm <span className="font-semibold text-white">Kiran</span>, founder of CUBES. 
+                Hi, I&apos;m <span className="font-semibold text-white">Kiran</span>, founder of CUBES. 
                 Like many of you, I grew up watching my parents spend hours in the kitchen—
                 chopping vegetables, grinding spices, and preparing fresh meals from scratch. 
                 It was labor-intensive, but the food was always incredible.
@@ -155,23 +155,23 @@ export default function BrandPage() {
               <p className="text-cream-100 text-lg leading-relaxed mb-6">
                 When I moved out and started living on my own, I quickly realized how much time 
                 and effort went into those home-cooked meals. Between work, classes, and life responsibilities, 
-                I found myself ordering takeout more than I'd like to admit. I wanted to cook, 
+                I found myself ordering takeout more than I&apos;d like to admit. I wanted to cook, 
                 but the <span className="text-primary-300 font-semibold">prep time was exhausting</span>.
               </p>
 
               <p className="text-cream-100 text-lg leading-relaxed mb-6">
-                One evening, after throwing away spoiled vegetables I'd bought with good intentions, 
+                One evening, after throwing away spoiled vegetables I&apos;d bought with good intentions, 
                 I had an idea: <span className="text-white font-semibold">What if someone had already done the prep work for me?</span> 
                 What if I could have perfectly portioned, fresh ingredients that I could just drop into my pan and cook?
               </p>
 
               <p className="text-cream-100 text-lg leading-relaxed mb-6">
-                That's when CUBES was born. I wanted to create something that would help people like me—
+                That&apos;s when CUBES was born. I wanted to create something that would help people like me—
                 <span className="text-white font-semibold"> students, young professionals, busy parents, and anyone who wants to eat well</span> without sacrificing hours of their day.
               </p>
 
               <p className="text-cream-100 text-lg leading-relaxed">
-                CUBES isn't just a product; it's a <span className="text-primary-300 font-semibold">solution to a problem I lived</span>. 
+                CUBES isn&apos;t just a product; it&apos;s a <span className="text-primary-300 font-semibold">solution to a problem I lived</span>. 
                 My hope is that CUBES will make it easier for you to enjoy healthy, delicious, 
                 home-cooked meals—without the hassle that kept me from cooking in the first place.
               </p>

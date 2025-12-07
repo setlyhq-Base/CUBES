@@ -1,6 +1,7 @@
 import { products, getProductBySlug } from '@/lib/products';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Check, Thermometer, ChefHat } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -54,7 +55,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             {/* Product Image */}
             <div className="relative h-96 bg-white rounded-2xl shadow-lg overflow-hidden">
               {product.imageUrl ? (
-                <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover" />
+                <Image src={product.imageUrl} alt={product.name} width={400} height={400} className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-forest-100">
                   <span className="text-9xl">🧊</span>

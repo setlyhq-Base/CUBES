@@ -145,7 +145,7 @@ export default function HowItWorksPage() {
                   ✓ Retains Nutrients
                 </h4>
                 <p className="text-neutral-600">
-                  Studies show that flash-frozen vegetables can retain more vitamins than "fresh" produce that's been sitting on shelves for days.
+                  Studies show that flash-frozen vegetables can retain more vitamins than &ldquo;fresh&rdquo; produce that&apos;s been sitting on shelves for days.
                 </p>
               </div>
               <div className="bg-primary-50 rounded-xl p-6">
@@ -169,12 +169,12 @@ export default function HowItWorksPage() {
                   ✓ Authentic Taste
                 </h4>
                 <p className="text-neutral-600">
-                  Properly frozen food tastes just as good as fresh—sometimes even better because it's frozen at peak ripeness.
+                  Properly frozen food tastes just as good as fresh—sometimes even better because it&apos;s frozen at peak ripeness.
                 </p>
               </div>
             </div>
             <p className="text-neutral-600 italic text-center">
-              With CUBES, you're not compromising on quality—you're getting produce at its absolute best.
+              With CUBES, you&apos;re not compromising on quality—you&apos;re getting produce at its absolute best.
             </p>
           </div>
         </div>

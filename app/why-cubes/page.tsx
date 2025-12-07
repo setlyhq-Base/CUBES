@@ -72,7 +72,7 @@ export default function WhyCubesPage() {
           <div className="bg-cream-100 rounded-2xl p-8 md:p-12 mb-12">
             <p className="text-lg text-neutral-700 leading-relaxed mb-6">
               Consumers want <span className="font-semibold text-forest-700">healthy, home-cooked meals</span>, 
-              but meal prep is time-consuming and overwhelming. At the same time, they're tired of:
+              but meal prep is time-consuming and overwhelming. At the same time, they&apos;re tired of:
             </p>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start">
@@ -85,7 +85,7 @@ export default function WhyCubesPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-primary-600 mr-3 text-2xl">•</span>
-                <span className="text-neutral-700">Food waste from produce that spoils before it's used</span>
+                <span className="text-neutral-700">Food waste from produce that spoils before it&apos;s used</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary-600 mr-3 text-2xl">•</span>
@@ -268,7 +268,7 @@ export default function WhyCubesPage() {
             Interested in Partnering with CUBES?
           </h2>
           <p className="text-xl text-cream-200 mb-8">
-            Whether you're a retailer, investor, or distributor, we'd love to hear from you.
+            Whether you&apos;re a retailer, investor, or distributor, we&apos;d love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" className="btn-primary">

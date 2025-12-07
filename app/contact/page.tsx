@@ -49,8 +49,8 @@ export default function ContactPage() {
                 Contact Information
               </h2>
               <p className="text-lg text-neutral-600 mb-8">
-                Whether you're a customer, retailer, or investor, we're here to help. 
-                Reach out and let's start a conversation.
+                Whether you&apos;re a customer, retailer, or investor, we&apos;re here to help. 
+                Reach out and let&apos;s start a conversation.
               </p>
 
               <div className="space-y-6">

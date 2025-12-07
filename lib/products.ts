@@ -8,7 +8,7 @@ export const products: Product[] = [
     description: 'Pre-diced, perfectly portioned onion cubes ready to enhance any dish.',
     longDescription: 'Our Onion Cubes are made from fresh, high-quality onions that are carefully diced, lightly sautéed for enhanced flavor, and flash-frozen at peak freshness. Perfect for curries, stir-fries, soups, and more.',
     ingredients: ['100% Fresh Onions', 'No Preservatives', 'No Additives'],
-    imageUrl: 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=800&q=80',
+    imageUrl: '/images/products/onion-cubes.svg',
     howToUse: [
       'Heat oil in a pan',
       'Add 3-4 onion cubes directly from freezer',
@@ -38,7 +38,7 @@ export const products: Product[] = [
     description: 'Rich, flavorful tomato cubes that bring instant depth to your cooking.',
     longDescription: 'Made from vine-ripened tomatoes, our Tomato Cubes are blanched, diced, and flash-frozen to preserve their natural sweetness and nutritional value. Perfect for curries, pasta sauces, and soups.',
     ingredients: ['100% Fresh Tomatoes', 'No Preservatives', 'No Additives'],
-    imageUrl: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&q=80',
+    imageUrl: '/images/products/tomato-cubes.svg',
     howToUse: [
       'Heat pan with oil or butter',
       'Add 4-5 tomato cubes directly from freezer',
@@ -68,7 +68,7 @@ export const products: Product[] = [
     description: 'A perfect blend of fresh vegetables in convenient, portion-controlled cubes.',
     longDescription: 'Our Mixed Vegetable Cubes feature a carefully selected combination of carrots, peas, beans, and corn. Each vegetable is blanched and flash-frozen to retain nutrients, color, and flavor.',
     ingredients: ['Carrots', 'Green Peas', 'Green Beans', 'Sweet Corn', 'No Preservatives'],
-    imageUrl: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&q=80',
+    imageUrl: '/images/products/mixed-veg-cubes.svg',
     howToUse: [
       'Add cubes directly to boiling water or hot pan',
       'Cook for 3-5 minutes',
@@ -98,7 +98,7 @@ export const products: Product[] = [
     description: 'Nutrient-rich spinach cubes for healthy, hassle-free cooking.',
     longDescription: 'Fresh spinach leaves are carefully washed, blanched, and pureed into convenient cubes. Packed with iron, vitamins, and minerals, our Spinach Cubes make it easy to add greens to any meal.',
     ingredients: ['100% Fresh Spinach', 'No Preservatives', 'No Additives'],
-    imageUrl: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=800&q=80',
+    imageUrl: '/images/products/spinach-cubes.svg',
     howToUse: [
       'Heat oil with garlic (optional)',
       'Add 2-3 spinach cubes directly from freezer',
@@ -128,7 +128,7 @@ export const products: Product[] = [
     description: 'Essential flavor base for Indian cooking, pre-ground and portioned.',
     longDescription: 'Our Ginger-Garlic Cubes feature fresh ginger and garlic ground together in perfect proportions. This essential flavor base is ready to elevate your curries, stir-fries, and marinades.',
     ingredients: ['Fresh Ginger', 'Fresh Garlic', 'No Preservatives'],
-    imageUrl: 'https://images.unsplash.com/photo-1615485500834-bc10199bc727?w=800&q=80',
+    imageUrl: '/images/products/ginger-garlic-cubes.svg',
     howToUse: [
       'Heat oil in pan',
       'Add 1-2 ginger-garlic cubes',
@@ -158,7 +158,7 @@ export const products: Product[] = [
     description: 'Pre-portioned fruit blends for perfect smoothies every time.',
     longDescription: 'A delicious mix of strawberries, blueberries, mangoes, and bananas, cut and frozen at peak ripeness. Just blend with your choice of liquid for an instant, nutritious smoothie.',
     ingredients: ['Strawberries', 'Blueberries', 'Mangoes', 'Bananas', 'No Added Sugar'],
-    imageUrl: 'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=800&q=80',
+    imageUrl: '/images/products/smoothie-fruit-cubes.svg',
     howToUse: [
       'Add 4-6 fruit cubes to blender',
       'Add milk, yogurt, or juice',
@@ -188,7 +188,7 @@ export const products: Product[] = [
     description: 'Authentic Indian curry base with onion, tomato, and spices.',
     longDescription: 'Our signature Curry Base Cubes combine sautéed onions, tomatoes, ginger, garlic, and aromatic spices. This ready-made base saves hours of prep and delivers restaurant-quality flavor.',
     ingredients: ['Onions', 'Tomatoes', 'Ginger', 'Garlic', 'Cumin', 'Coriander', 'Turmeric', 'Red Chili'],
-    imageUrl: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80',
+    imageUrl: '/images/products/curry-base-cubes.svg',
     howToUse: [
       'Heat oil in pan',
       'Add 3-4 curry base cubes',
