@@ -7,6 +7,7 @@ import FloatingActionButton from "@/components/FloatingActionButton";
 import ScrollProgress from "@/components/ScrollProgress";
 import PageTransition from "@/components/PageTransition";
 import PWAInstallPrompt from "@/components/PWAInstallPrompt";
+import BottomNav from "@/components/BottomNav";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -77,6 +78,7 @@ export default function RootLayout({
           </main>
         </PageTransition>
         <Footer />
+        <BottomNav />
         <FloatingActionButton />
         <PWAInstallPrompt />
       </body>

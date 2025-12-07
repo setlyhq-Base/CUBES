@@ -186,13 +186,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
             {[
-              { icon: Zap, title: 'Zero Prep', desc: 'Drop frozen cubes straight into your pan' },
-              { icon: Leaf, title: 'Zero Chemicals', desc: 'Real ingredients, flash-frozen at peak' },
-              { icon: Snowflake, title: 'Zero Waste', desc: 'Pre-portioned perfection, 9-month life' }
+              { id: 'zero-prep', icon: Zap, title: 'Zero Prep', desc: 'Drop frozen cubes straight into your pan' },
+              { id: 'zero-chemicals', icon: Leaf, title: 'Zero Chemicals', desc: 'Real ingredients, flash-frozen at peak' },
+              { id: 'zero-waste', icon: Snowflake, title: 'Zero Waste', desc: 'Pre-portioned perfection, 9-month life' }
             ].map((benefit, index) => {
               const Icon = benefit.icon;
               return (
-                <ScrollReveal key={index} delay={index * 80} direction="scale">
+                <ScrollReveal key={benefit.id} delay={index * 80} direction="scale">
                   <div className="bg-cream-50 rounded-xl md:rounded-2xl p-4 md:p-6 border-2 border-gray-100 hover:border-primary-200 hover:shadow-md transition-all duration-300 group active:scale-95">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg md:rounded-xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
                       <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
@@ -304,11 +304,11 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-3 md:gap-4">
             {[
-              { emoji: '👨‍🎓', title: 'Students' },
-              { emoji: '💼', title: 'Professionals' },
-              { emoji: '👨‍👩‍👧', title: 'Families' }
+              { id: 'students', emoji: '👨‍🎓', title: 'Students' },
+              { id: 'professionals', emoji: '💼', title: 'Professionals' },
+              { id: 'families', emoji: '👨‍👩‍👧', title: 'Families' }
             ].map((persona, index) => (
-              <ScrollReveal key={index} delay={index * 80} direction="scale">
+              <ScrollReveal key={persona.id} delay={index * 80} direction="scale">
                 <div className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 border-2 border-gray-100 hover:border-primary-200 hover:shadow-md transition-all duration-300 text-center group active:scale-95">
                   <div className="text-3xl md:text-4xl mb-2 md:mb-3 group-hover:scale-110 transition-transform">
                     {persona.emoji}

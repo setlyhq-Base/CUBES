@@ -315,4 +315,14 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Safe area support for bottom navigation */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Prevent content from being hidden behind bottom nav */
+  .content-with-bottom-nav {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
 }
