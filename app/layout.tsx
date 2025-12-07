@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingActionButton from "@/components/FloatingActionButton";
+import ScrollProgress from "@/components/ScrollProgress";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -31,11 +34,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <ScrollProgress />
         <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <PageTransition>
+          <main className="min-h-screen">
+            {children}
+          </main>
+        </PageTransition>
         <Footer />
+        <FloatingActionButton />
       </body>
     </html>
   );

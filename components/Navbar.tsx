@@ -1,11 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { href: '/products', label: 'Products' },
@@ -16,15 +27,29 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'shadow-lg' : 'shadow-sm'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className={`flex justify-between items-center transition-all duration-300 ${
+          isScrolled ? 'h-16' : 'h-20'
+        }`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-forest-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">C</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className={`relative transition-all duration-300 ${
+              isScrolled ? 'w-8 h-8' : 'w-10 h-10'
+            }`}>
+              <Image
+                src="/images/CUBES_logo.png"
+                alt="CUBES Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
-            <span className="text-2xl font-bold text-forest-700">CUBES</span>
+            <span className={`font-bold text-forest-700 transition-all duration-300 ${
+              isScrolled ? 'text-xl' : 'text-2xl'
+            }`}>CUBES</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -33,7 +58,7 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-neutral-700 hover:text-primary-600 font-medium transition-colors"
+                className="text-neutral-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105"
               >
                 {link.label}
               </Link>
@@ -46,7 +71,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-neutral-700 hover:text-primary-600"
+            className="md:hidden text-neutral-700 hover:text-primary-600 transition-transform duration-300 active:scale-90"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -54,12 +79,12 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-6 space-y-4">
+          <div className="md:hidden pb-6 space-y-4 animate-slide-up">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-neutral-700 hover:text-primary-600 font-medium py-2"
+                className="block text-neutral-700 hover:text-primary-600 font-medium py-2 hover:pl-2 transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}

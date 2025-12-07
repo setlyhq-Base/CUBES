@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -28,9 +29,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">C</span>
+            <Link href="/" className="flex items-center space-x-3 mb-4">
+              <div className="relative w-10 h-10">
+                <Image
+                  src="/images/CUBES_logo.png"
+                  alt="CUBES Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="text-2xl font-bold">CUBES</span>
             </Link>
