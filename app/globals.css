@@ -5,27 +5,43 @@
 @layer base {
   body {
     @apply bg-cream-50 text-neutral-700;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent text size adjustment on mobile */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Safe area insets for notched devices */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
   
   html {
     scroll-behavior: smooth;
+    /* Prevent elastic scrolling on iOS */
+    overscroll-behavior-y: none;
   }
   
-  /* Refined typography scale */
-  h1 { @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight; }
-  h2 { @apply text-2xl md:text-3xl lg:text-4xl font-bold leading-tight; }
-  h3 { @apply text-xl md:text-2xl font-bold leading-tight; }
-  h4 { @apply text-lg md:text-xl font-semibold leading-tight; }
+  /* Refined typography scale with better mobile sizing */
+  h1 { @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight; }
+  h2 { @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight; }
+  h3 { @apply text-lg sm:text-xl md:text-2xl font-bold leading-tight; }
+  h4 { @apply text-base sm:text-lg md:text-xl font-semibold leading-tight; }
   
   /* Smooth focus states */
   input:focus, textarea:focus, select:focus {
     @apply outline-none ring-2 ring-primary-500 ring-opacity-50;
   }
+  
+  /* Improve touch target sizes for mobile */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 active:scale-95 text-sm relative overflow-hidden;
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105 active:scale-95 text-sm relative overflow-hidden touch-manipulation;
   }
   
   .btn-primary::before {
@@ -47,11 +63,11 @@
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-cream-100 text-forest-600 font-semibold py-2.5 px-6 rounded-full border-2 border-forest-600 transition-all duration-300 hover:scale-105 active:scale-95 text-sm;
+    @apply bg-white hover:bg-cream-100 text-forest-600 font-semibold py-2.5 px-6 rounded-full border-2 border-forest-600 transition-all duration-300 hover:scale-105 active:scale-95 text-sm touch-manipulation;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-5 hover:-translate-y-1 cursor-pointer;
+    @apply bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-4 md:p-5 hover:-translate-y-1 cursor-pointer touch-manipulation;
   }
   
   .card-interactive {
@@ -75,7 +91,7 @@
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16;
   }
   
   /* Professional shadow system */
@@ -91,9 +107,11 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
-  /* Input field styles */
+  /* Input field styles with mobile optimization */
   .input-field {
-    @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary-500 transition-all duration-300 bg-white;
+    @apply w-full px-3 md:px-4 py-2.5 md:py-3 rounded-lg md:rounded-xl border-2 border-gray-200 focus:border-primary-500 transition-all duration-300 bg-white touch-manipulation;
+    /* Prevent zoom on iOS */
+    font-size: 16px;
   }
   
   .input-field:hover {

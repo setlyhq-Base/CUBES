@@ -25,9 +25,9 @@ const FloatingCubes = () => {
       rotationSpeed: number;
       opacity: number;
 
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+      constructor(canvasWidth: number, canvasHeight: number) {
+        this.x = Math.random() * canvasWidth;
+        this.y = Math.random() * canvasHeight;
         this.size = Math.random() * 30 + 10;
         this.speedX = (Math.random() - 0.5) * 0.5;
         this.speedY = (Math.random() - 0.5) * 0.5;
@@ -36,16 +36,16 @@ const FloatingCubes = () => {
         this.opacity = Math.random() * 0.3 + 0.1;
       }
 
-      update() {
+      update(canvasWidth: number, canvasHeight: number) {
         this.x += this.speedX;
         this.y += this.speedY;
         this.rotation += this.rotationSpeed;
 
         // Wrap around edges
-        if (this.x < -this.size) this.x = canvas.width + this.size;
-        if (this.x > canvas.width + this.size) this.x = -this.size;
-        if (this.y < -this.size) this.y = canvas.height + this.size;
-        if (this.y > canvas.height + this.size) this.y = -this.size;
+        if (this.x < -this.size) this.x = canvasWidth + this.size;
+        if (this.x > canvasWidth + this.size) this.x = -this.size;
+        if (this.y < -this.size) this.y = canvasHeight + this.size;
+        if (this.y > canvasHeight + this.size) this.y = -this.size;
       }
 
       draw(ctx: CanvasRenderingContext2D) {
@@ -93,7 +93,7 @@ const FloatingCubes = () => {
     const cubeCount = 8;
 
     for (let i = 0; i < cubeCount; i++) {
-      cubes.push(new Cube());
+      cubes.push(new Cube(canvas.width, canvas.height));
     }
 
     let animationFrameId: number;
@@ -102,7 +102,7 @@ const FloatingCubes = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       cubes.forEach((cube) => {
-        cube.update();
+        cube.update(canvas.width, canvas.height);
         cube.draw(ctx);
       });
 

@@ -32,12 +32,12 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex justify-between items-center transition-all duration-300 ${
-          isScrolled ? 'h-16' : 'h-20'
+          isScrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'
         }`}>
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-3">
             <div className={`relative transition-all duration-300 ${
-              isScrolled ? 'w-8 h-8' : 'w-10 h-10'
+              isScrolled ? 'w-7 h-7 md:w-8 md:h-8' : 'w-8 h-8 md:w-10 md:h-10'
             }`}>
               <Image
                 src="/images/CUBES_logo.png"
@@ -48,22 +48,22 @@ const Navbar = () => {
               />
             </div>
             <span className={`font-bold text-forest-700 transition-all duration-300 ${
-              isScrolled ? 'text-xl' : 'text-2xl'
+              isScrolled ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'
             }`}>CUBES</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-neutral-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105"
+                className="text-sm lg:text-base text-neutral-700 hover:text-primary-600 font-medium transition-all duration-300 hover:scale-105"
               >
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact" className="btn-primary text-sm lg:text-base py-2 px-4 lg:py-2.5 lg:px-5">
               Get Started
             </Link>
           </div>
@@ -71,20 +71,21 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-neutral-700 hover:text-primary-600 transition-transform duration-300 active:scale-90"
+            className="md:hidden text-neutral-700 hover:text-primary-600 transition-transform duration-300 active:scale-90 touch-manipulation p-2"
+            aria-label="Toggle menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-6 space-y-4 animate-slide-up">
+          <div className="md:hidden pb-4 pt-2 space-y-1 animate-slide-up">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-neutral-700 hover:text-primary-600 font-medium py-2 hover:pl-2 transition-all duration-300"
+                className="block text-neutral-700 hover:text-primary-600 font-medium py-2.5 px-2 hover:pl-3 hover:bg-cream-50 rounded-lg transition-all duration-300 touch-manipulation active:scale-95"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -92,7 +93,7 @@ const Navbar = () => {
             ))}
             <Link
               href="/contact"
-              className="block btn-primary text-center mt-4"
+              className="block btn-primary text-center mt-3 touch-manipulation active:scale-95"
               onClick={() => setIsOpen(false)}
             >
               Get Started
