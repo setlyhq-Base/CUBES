@@ -31,17 +31,17 @@ const HeroSection = ({
         </div>
       )}
       
-      <div className="section-container relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-forest-700 mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-forest-700 mb-4 leading-tight">
             {title}
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-neutral-600 mb-10 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-neutral-600 mb-6 max-w-2xl mx-auto">
             {subtitle}
           </p>
           
           {(primaryCta || secondaryCta) && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               {primaryCta && (
                 <a href={primaryCta.href} className="btn-primary">
                   {primaryCta.text}

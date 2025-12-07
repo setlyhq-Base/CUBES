@@ -17,27 +17,29 @@ export default function ProductsPage() {
         subtitle="From everyday essentials to gourmet shortcuts—all pre-prepped, portioned, and ready to transform your cooking."
       />
 
-      <section className="section-container bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              name={product.name}
-              description={product.description}
-              slug={product.slug}
-              imageUrl={product.imageUrl}
-            />
-          ))}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                name={product.name}
+                description={product.description}
+                slug={product.slug}
+                imageUrl={product.imageUrl}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-container bg-cream-100">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-forest-700 mb-4">
+      {/* CTA Section - Compact */}
+      <section className="py-10 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-forest-700 mb-3">
             Ready to revolutionize your kitchen?
           </h2>
-          <p className="text-lg text-neutral-600 mb-8">
+          <p className="text-base text-neutral-600 mb-5">
             Join our waitlist to be the first to experience CUBES when we launch.
           </p>
           <a href="/#waitlist" className="btn-primary">

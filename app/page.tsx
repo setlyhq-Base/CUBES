@@ -1,7 +1,8 @@
 import HeroSection from '@/components/HeroSection';
 import SectionTitle from '@/components/SectionTitle';
 import ProductCard from '@/components/ProductCard';
-import IconBulletList from '@/components/IconBulletList';
+import BenefitCard from '@/components/BenefitCard';
+import FeatureCard from '@/components/FeatureCard';
 import { 
   Clock, 
   Leaf, 
@@ -11,7 +12,9 @@ import {
   ChefHat,
   AlertCircle,
   Calendar,
-  Users
+  Heart,
+  Zap,
+  Shield
 } from 'lucide-react';
 import { getFeaturedProducts } from '@/lib/products';
 import Link from 'next/link';
@@ -103,67 +106,89 @@ export default function Home() {
         secondaryCta={{ text: 'How It Works', href: '/how-it-works' }}
       />
 
-      {/* Problem Section */}
-      <section className="section-container bg-white">
-        <SectionTitle centered subtitle="We know cooking from scratch can feel overwhelming">
-          The Daily Kitchen Challenge
-        </SectionTitle>
-        <IconBulletList items={problemPoints} columns={4} />
+      {/* Problem Section - Compact Card Grid */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle centered subtitle="We know cooking from scratch can feel overwhelming">
+            The Daily Kitchen Challenge
+          </SectionTitle>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+            {problemPoints.map((point, index) => (
+              <FeatureCard
+                key={index}
+                icon={point.icon}
+                title={point.title}
+                description={point.description}
+              />
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="section-container bg-cream-100">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+      {/* Solution Section - Compact */}
+      <section className="py-12 bg-cream-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionTitle centered>
             Meet CUBES: Your Kitchen Shortcut
           </SectionTitle>
-          <p className="text-lg md:text-xl text-neutral-600 mb-8">
-            CUBES are frozen portion-controlled cubes made from fresh vegetables, fruits, curry bases, herbs, and spice blends. 
-            Each cube is perfectly portioned for your cooking needs.
+          <p className="text-base text-neutral-600 mb-6 max-w-2xl mx-auto">
+            Frozen portion-controlled cubes made from fresh vegetables, fruits, curry bases, and herbs. Perfectly portioned for your cooking needs.
           </p>
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-center">
+          <div className="bg-white rounded-2xl shadow-md p-6 md:p-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
               <div className="flex-1">
-                <div className="text-5xl mb-3">🧊</div>
-                <h3 className="text-xl font-semibold text-forest-700 mb-2">Drop</h3>
-                <p className="text-neutral-600">Add cubes directly from freezer</p>
+                <div className="text-4xl mb-2">🧊</div>
+                <h3 className="text-lg font-semibold text-forest-700 mb-1">Drop</h3>
+                <p className="text-neutral-600 text-sm">From freezer to pan</p>
               </div>
-              <div className="text-3xl text-primary-500">→</div>
+              <div className="text-2xl text-primary-500">→</div>
               <div className="flex-1">
-                <div className="text-5xl mb-3">🍳</div>
-                <h3 className="text-xl font-semibold text-forest-700 mb-2">Cook</h3>
-                <p className="text-neutral-600">Heat and incorporate into your dish</p>
+                <div className="text-4xl mb-2">🍳</div>
+                <h3 className="text-lg font-semibold text-forest-700 mb-1">Cook</h3>
+                <p className="text-neutral-600 text-sm">Heat & incorporate</p>
               </div>
-              <div className="text-3xl text-primary-500">→</div>
+              <div className="text-2xl text-primary-500">→</div>
               <div className="flex-1">
-                <div className="text-5xl mb-3">✨</div>
-                <h3 className="text-xl font-semibold text-forest-700 mb-2">Done</h3>
-                <p className="text-neutral-600">Enjoy restaurant-quality meals at home</p>
+                <div className="text-4xl mb-2">✨</div>
+                <h3 className="text-lg font-semibold text-forest-700 mb-1">Enjoy</h3>
+                <p className="text-neutral-600 text-sm">Restaurant-quality meals</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Benefits */}
-      <section className="section-container bg-white">
-        <SectionTitle centered subtitle="Everything you need, nothing you don't">
-          Why Choose CUBES?
-        </SectionTitle>
-        <IconBulletList items={benefits} />
+      {/* Key Benefits - Compact Card Grid */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle centered subtitle="Everything you need, nothing you don't">
+            Why Choose CUBES?
+          </SectionTitle>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+            {benefits.map((benefit, index) => (
+              <BenefitCard
+                key={index}
+                icon={benefit.icon}
+                title={benefit.title}
+                description={benefit.description}
+              />
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* Product Preview Grid */}
-      <section className="section-container bg-gradient-to-b from-cream-50 to-white">
-        <SectionTitle 
-          centered 
-          subtitle="From everyday essentials to gourmet shortcuts"
-        >
-          Our Product Range
-        </SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {featuredProducts.map((product) => (
-            <ProductCard
+      {/* Product Preview Grid - Compact */}
+      <section className="py-12 bg-gradient-to-b from-cream-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            centered 
+            subtitle="From everyday essentials to gourmet shortcuts"
+          >
+            Our Product Range
+          </SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 mb-8">
+            {featuredProducts.map((product) => (
+              <ProductCard
               key={product.id}
               name={product.name}
               description={product.description}
@@ -172,63 +197,63 @@ export default function Home() {
             />
           ))}
         </div>
-        <div className="text-center">
+        <div className="text-center mt-2">
           <Link href="/products" className="btn-primary">
             View All Products
           </Link>
         </div>
+        </div>
       </section>
 
-      {/* How It Works Mini Teaser */}
-      <section className="section-container bg-forest-700 text-white">
-        <SectionTitle centered>
-          <span className="text-white">How CUBES Come to Life</span>
-        </SectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {processSteps.map((step) => (
-            <div key={step.number} className="text-center">
-              <div className="text-5xl font-bold text-primary-400 mb-4">
-                {step.number}
+      {/* How It Works Mini Teaser - Compact */}
+      <section className="py-12 bg-forest-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle centered>
+            <span className="text-white">How CUBES Come to Life</span>
+          </SectionTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {processSteps.map((step) => (
+              <div key={step.number} className="text-center bg-forest-600 rounded-xl p-5">
+                <div className="text-4xl font-bold text-primary-400 mb-3">
+                  {step.number}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                <p className="text-cream-200 text-sm">{step.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-              <p className="text-cream-200">{step.description}</p>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-12">
-          <Link href="/how-it-works" className="btn-primary">
-            Learn More About Our Process
-          </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/how-it-works" className="btn-primary">
+              Learn More About Our Process
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="section-container bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Users className="text-primary-600" size={32} />
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-700">
+      {/* Social Proof - Compact Cards */}
+      <section className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-forest-700 mb-3">
               Made for Modern Lifestyles
             </h2>
+            <p className="text-base text-neutral-600 max-w-3xl mx-auto">
+              Loved by students, professionals, health-conscious cooks, and families craving authentic flavors without the prep time.
+            </p>
           </div>
-          <p className="text-xl text-neutral-600 mb-8">
-            CUBES is loved by students juggling classes, professionals managing busy schedules, 
-            health-conscious cooks prioritizing nutrition, and Indian households craving authentic flavors 
-            without the prep time.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-cream-100 rounded-2xl p-6">
-              <div className="text-4xl mb-3">👨‍🎓</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="bg-cream-50 rounded-xl p-5 border border-cream-200">
+              <div className="text-3xl mb-2">👨‍🎓</div>
               <h3 className="font-semibold text-forest-700 mb-2">Students</h3>
-              <p className="text-neutral-600 text-sm">Quick, healthy meals between classes and study sessions</p>
+              <p className="text-neutral-600 text-sm">Quick, healthy meals between classes</p>
             </div>
-            <div className="bg-cream-100 rounded-2xl p-6">
-              <div className="text-4xl mb-3">💼</div>
+            <div className="bg-cream-50 rounded-xl p-5 border border-cream-200">
+              <div className="text-3xl mb-2">💼</div>
               <h3 className="font-semibold text-forest-700 mb-2">Professionals</h3>
               <p className="text-neutral-600 text-sm">Home-cooked meals without sacrificing evenings</p>
             </div>
-            <div className="bg-cream-100 rounded-2xl p-6">
-              <div className="text-4xl mb-3">👨‍👩‍👧</div>
+            <div className="bg-cream-50 rounded-xl p-5 border border-cream-200">
+              <div className="text-3xl mb-2">👨‍👩‍👧</div>
               <h3 className="font-semibold text-forest-700 mb-2">Families</h3>
               <p className="text-neutral-600 text-sm">Nutritious dinners the whole family will love</p>
             </div>
@@ -236,13 +261,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Email Capture / CTA */}
-      <section className="section-container bg-gradient-to-br from-primary-50 to-forest-50">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-forest-700 mb-4">
+      {/* Email Capture / CTA - Compact */}
+      <section className="py-12 bg-gradient-to-br from-primary-50 to-forest-50">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-forest-700 mb-3">
             Get Notified When We Launch
           </h2>
-          <p className="text-lg md:text-xl text-neutral-600 mb-8">
+          <p className="text-base text-neutral-600 mb-6">
             Be the first to experience the future of home cooking. Join our waitlist for exclusive early access and special launch offers.
           </p>
           <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
