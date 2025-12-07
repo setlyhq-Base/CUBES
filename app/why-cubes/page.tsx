@@ -1,5 +1,4 @@
-import HeroSection from '@/components/HeroSection';
-import SectionTitle from '@/components/SectionTitle';
+import ScrollReveal from '@/components/ScrollReveal';
 import { 
   Users, 
   TrendingUp, 
@@ -200,64 +199,63 @@ export default function WhyCubesPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection
-        title="Why CUBES?"
-        subtitle="A massive market opportunity in the intersection of convenience, health, and sustainability."
-      />
-
       {/* The Problem - Interactive Pain Points */}
-      <section className="py-12 bg-gradient-to-b from-white to-cream-50 relative overflow-hidden">
+      <section className="pt-8 pb-12 bg-gradient-to-b from-white to-cream-50 relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-forest-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-10 animate-fade-in">
-            <div className="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              The Modern Dilemma
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <div className="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                The Modern Dilemma
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-forest-700 mb-3">
+                The Convenience vs. Health Trade-Off
+              </h2>
+              <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+                Consumers want healthy meals, but meal prep is overwhelming
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-700 mb-3">
-              The Convenience vs. Health Trade-Off
-            </h2>
-            <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-              Consumers want healthy meals, but meal prep is overwhelming
-            </p>
-          </div>
+          </ScrollReveal>
 
           {/* Pain Points Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
             {painPoints.map((point, index) => {
               const Icon = point.icon;
               return (
-                <div 
-                  key={index}
-                  className={`group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-red-300 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 animate-fade-in-up delay-${(index + 1) * 100}`}
-                >
-                  <div className="flex items-start gap-3">
-                    <Icon className={`w-6 h-6 ${point.color} flex-shrink-0 mt-1`} />
-                    <p className="text-sm text-neutral-700 leading-relaxed">{point.text}</p>
+                <ScrollReveal key={index} delay={index * 80} direction="scale">
+                  <div 
+                    className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-red-300 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1"
+                  >
+                    <div className="flex items-start gap-3">
+                      <Icon className={`w-6 h-6 ${point.color} flex-shrink-0 mt-1`} />
+                      <p className="text-sm text-neutral-700 leading-relaxed">{point.text}</p>
+                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
 
           {/* Result Callout */}
-          <div className="max-w-3xl mx-auto animate-fade-in delay-400">
-            <div className="relative bg-gradient-to-br from-primary-500 to-forest-600 rounded-2xl p-8 text-white overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full filter blur-3xl opacity-10"></div>
-              <div className="relative z-10 text-center">
-                <Sparkles className="w-8 h-8 mx-auto mb-3" />
-                <p className="text-lg font-semibold mb-2">
-                  CUBES fills this gap perfectly
-                </p>
-                <p className="text-cream-200">
-                  The perfect balance of convenience, health, and sustainability
-                </p>
+          <ScrollReveal delay={320}>
+            <div className="max-w-3xl mx-auto">
+              <div className="relative bg-gradient-to-br from-primary-500 to-forest-600 rounded-2xl p-8 text-white overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full filter blur-3xl opacity-10"></div>
+                <div className="relative z-10 text-center">
+                  <Sparkles className="w-8 h-8 mx-auto mb-3" />
+                  <p className="text-lg font-semibold mb-2">
+                    CUBES fills this gap perfectly
+                  </p>
+                  <p className="text-cream-200">
+                    The perfect balance of convenience, health, and sustainability
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

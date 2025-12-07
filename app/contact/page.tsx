@@ -1,6 +1,6 @@
 'use client';
 
-import HeroSection from '@/components/HeroSection';
+import ScrollReveal from '@/components/ScrollReveal';
 import { Mail, MapPin, Phone, Building2, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
@@ -35,25 +35,37 @@ export default function ContactPage() {
 
   return (
     <>
-      <HeroSection
-        title="Get in Touch"
-        subtitle="Have questions? Want to partner with us? We'd love to hear from you."
-      />
+      {/* Compact Header */}
+      <section className="pt-8 pb-4 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center">
+              <h1 className="text-3xl md:text-4xl font-bold text-forest-700 mb-2">
+                Get in Touch
+              </h1>
+              <p className="text-neutral-600">
+                Have questions? Want to partner with us? We&apos;d love to hear from you.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-      <section className="section-container bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-12 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-forest-700 mb-6">
-                Contact Information
-              </h2>
-              <p className="text-lg text-neutral-600 mb-8">
-                Whether you&apos;re a customer, retailer, or investor, we&apos;re here to help. 
-                Reach out and let&apos;s start a conversation.
-              </p>
+            <ScrollReveal direction="left">
+              <div>
+                <h2 className="text-3xl font-bold text-forest-700 mb-6">
+                  Contact Information
+                </h2>
+                <p className="text-lg text-neutral-600 mb-8">
+                  Whether you&apos;re a customer, retailer, or investor, we&apos;re here to help. 
+                  Reach out and let&apos;s start a conversation.
+                </p>
 
-              <div className="space-y-6">
+                <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                     <Mail className="text-primary-600" size={24} />
@@ -110,10 +122,12 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
 
             {/* Contact Form */}
-            <div>
-              <div className="card">
+            <ScrollReveal direction="right" delay={100}>
+              <div>
+                <div className="card">
                 <h2 className="text-2xl font-bold text-forest-700 mb-6">
                   Send Us a Message
                 </h2>
@@ -216,23 +230,26 @@ export default function ContactPage() {
                 </form>
               </div>
             </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* FAQ Teaser */}
-      <section className="section-container bg-cream-100">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-forest-700 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-neutral-600 mb-8">
-            Before reaching out, you might find answers to common questions about CUBES, 
-            our products, ordering, and more.
-          </p>
-          <button className="btn-secondary" disabled>
-            View FAQ (Coming Soon)
-          </button>
+      <section className="py-12 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold text-forest-700 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-neutral-600 mb-8">
+              Before reaching out, you might find answers to common questions about CUBES, 
+              our products, ordering, and more.
+            </p>
+            <button className="btn-secondary" disabled>
+              View FAQ (Coming Soon)
+            </button>
+          </ScrollReveal>
         </div>
       </section>
     </>

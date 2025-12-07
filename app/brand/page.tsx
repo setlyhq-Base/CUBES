@@ -1,6 +1,5 @@
-import HeroSection from '@/components/HeroSection';
-import SectionTitle from '@/components/SectionTitle';
 import Image from 'next/image';
+import ScrollReveal from '@/components/ScrollReveal';
 import { Heart, Target, Leaf, Zap, Shield, Clock, Trash2, Droplet, Sparkles, Users, TrendingUp, Award, ChefHat, Home } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -108,14 +107,8 @@ export default function BrandPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection
-        title="Our Story"
-        subtitle="Real food for real people. A mission to bring back home-cooked meals without the hassle."
-      />
-
       {/* Mission & Vision - Split Screen Cards */}
-      <section className="py-12 bg-gradient-to-b from-white to-cream-50 relative overflow-hidden">
+      <section className="pt-8 pb-12 bg-gradient-to-b from-white to-cream-50 relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-forest-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{animationDelay: '1s'}}></div>
@@ -123,33 +116,37 @@ export default function BrandPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-6">
             {/* Mission Card */}
-            <div className="group bg-white rounded-3xl p-8 md:p-10 border-2 border-gray-100 hover:border-primary-300 transition-all duration-500 hover:shadow-2xl hover:transform hover:-translate-y-1 animate-fade-in-up">
-              <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                <Target className="text-white w-7 h-7" />
+            <ScrollReveal direction="left">
+              <div className="group bg-white rounded-3xl p-8 md:p-10 border-2 border-gray-100 hover:border-primary-300 transition-all duration-500 hover:shadow-2xl hover:transform hover:-translate-y-1">
+                <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <Target className="text-white w-7 h-7" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-forest-700 mb-4">
+                  Our Mission
+                </h2>
+                <p className="text-lg text-neutral-600 leading-relaxed">
+                  To make home cooking <span className="text-primary-600 font-semibold">effortless, accessible, and sustainable</span> for everyone—
+                  by delivering fresh, pre-prepped ingredients that save time, reduce waste, and preserve nutrition.
+                </p>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-forest-700 mb-4">
-                Our Mission
-              </h2>
-              <p className="text-lg text-neutral-600 leading-relaxed">
-                To make home cooking <span className="text-primary-600 font-semibold">effortless, accessible, and sustainable</span> for everyone—
-                by delivering fresh, pre-prepped ingredients that save time, reduce waste, and preserve nutrition.
-              </p>
-            </div>
+            </ScrollReveal>
 
             {/* Vision Card */}
-            <div className="group bg-gradient-to-br from-forest-700 to-forest-600 rounded-3xl p-8 md:p-10 border-2 border-forest-500 hover:border-forest-400 transition-all duration-500 hover:shadow-2xl hover:transform hover:-translate-y-1 animate-fade-in-up delay-200">
-              <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                <Heart className="text-forest-700 w-7 h-7" />
+            <ScrollReveal direction="right" delay={100}>
+              <div className="group bg-gradient-to-br from-forest-700 to-forest-600 rounded-3xl p-8 md:p-10 border-2 border-forest-500 hover:border-forest-400 transition-all duration-500 hover:shadow-2xl hover:transform hover:-translate-y-1">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <Heart className="text-forest-700 w-7 h-7" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                  Our Vision
+                </h2>
+                <p className="text-lg text-cream-100 leading-relaxed">
+                  We envision a world where <span className="text-primary-300 font-semibold">every kitchen</span> is equipped with CUBES—
+                  where busy students, professionals, and families can enjoy 
+                  <span className="text-primary-300 font-semibold"> delicious, nutritious home-cooked meals</span> without the stress of meal prep.
+                </p>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Our Vision
-              </h2>
-              <p className="text-lg text-cream-100 leading-relaxed">
-                We envision a world where <span className="text-primary-300 font-semibold">every kitchen</span> is equipped with CUBES—
-                where busy students, professionals, and families can enjoy 
-                <span className="text-primary-300 font-semibold"> delicious, nutritious home-cooked meals</span> without the stress of meal prep.
-              </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -157,96 +154,104 @@ export default function BrandPage() {
       {/* Problems We Solve - Interactive Stat Cards */}
       <section className="py-12 bg-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-700 mb-3">
-              The Daily Frustrations
-            </h2>
-            <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-              We understand what keeps you from cooking at home
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-forest-700 mb-3">
+                The Daily Frustrations
+              </h2>
+              <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+                We understand what keeps you from cooking at home
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {problemCards.map((problem, index) => {
               const Icon = problem.icon;
               return (
-                <div 
-                  key={index}
-                  className={`group relative bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-transparent transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2 overflow-hidden animate-fade-in-scale delay-${(index + 1) * 100}`}
-                >
-                  {/* Gradient overlay on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${problem.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                  
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <div className={`w-12 h-12 bg-gradient-to-br ${problem.gradient} rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-forest-700 mb-3">{problem.title}</h3>
-
-                    {/* Big Stat */}
-                    <div className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-forest-600 bg-clip-text text-transparent mb-2">
-                      {problem.stat}
-                    </div>
+                <ScrollReveal key={index} delay={index * 100} direction="scale">
+                  <div 
+                    className="group relative bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-transparent transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2 overflow-hidden"
+                  >
+                    {/* Gradient overlay on hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${problem.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                     
-                    {/* Description */}
-                    <p className="text-sm text-neutral-600">{problem.description}</p>
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className={`w-12 h-12 bg-gradient-to-br ${problem.gradient} rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-forest-700 mb-3">{problem.title}</h3>
+
+                      {/* Big Stat */}
+                      <div className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-forest-600 bg-clip-text text-transparent mb-2">
+                        {problem.stat}
+                      </div>
+                      
+                      {/* Description */}
+                      <p className="text-sm text-neutral-600">{problem.description}</p>
+                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
 
           {/* Result Callout */}
-          <div className="max-w-3xl mx-auto animate-fade-in delay-400">
-            <div className="relative bg-gradient-to-r from-primary-50 via-cream-50 to-forest-50 rounded-2xl p-8 border-2 border-primary-200 overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-300 rounded-full filter blur-3xl opacity-20"></div>
-              <div className="relative z-10 text-center">
-                <p className="text-lg text-neutral-700">
-                  <span className="font-bold text-forest-700">The result?</span> People skip cooking altogether, 
-                  resorting to expensive takeout or unhealthy processed meals. 
-                  <span className="font-semibold text-primary-600"> We believe there&apos;s a better way.</span>
-                </p>
+          <ScrollReveal delay={300}>
+            <div className="max-w-3xl mx-auto">
+              <div className="relative bg-gradient-to-r from-primary-50 via-cream-50 to-forest-50 rounded-2xl p-8 border-2 border-primary-200 overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary-300 rounded-full filter blur-3xl opacity-20"></div>
+                <div className="relative z-10 text-center">
+                  <p className="text-lg text-neutral-700">
+                    <span className="font-bold text-forest-700">The result?</span> People skip cooking altogether, 
+                    resorting to expensive takeout or unhealthy processed meals. 
+                    <span className="font-semibold text-primary-600"> We believe there&apos;s a better way.</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Our Values - Compact Cards with Hover Reveals */}
       <section className="py-12 bg-gradient-to-b from-cream-50 to-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 animate-fade-in">
-            <Sparkles className="w-8 h-8 text-primary-500 mx-auto mb-3" />
-            <h2 className="text-3xl md:text-4xl font-bold text-forest-700 mb-3">
-              Our Values
-            </h2>
-            <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-              The principles that guide everything we do
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-10">
+              <Sparkles className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+              <h2 className="text-3xl md:text-4xl font-bold text-forest-700 mb-3">
+                Our Values
+              </h2>
+              <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+                The principles that guide everything we do
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {valueCards.map((value, index) => {
               const Icon = value.icon;
               return (
-                <div 
-                  key={index}
-                  className={`group bg-gradient-to-br ${value.color} rounded-2xl p-5 border-2 border-gray-100 hover:border-primary-300 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1 animate-fade-in-up delay-${(index + 1) * 100}`}
-                >
-                  {/* Icon */}
-                  <div className={`w-12 h-12 ${value.iconBg} rounded-xl flex items-center justify-center mb-3 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 mx-auto`}>
-                    <Icon className="w-6 h-6 text-white" />
+                <ScrollReveal key={index} delay={index * 80} direction="scale">
+                  <div 
+                    className={`group bg-gradient-to-br ${value.color} rounded-2xl p-5 border-2 border-gray-100 hover:border-primary-300 transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1`}
+                  >
+                    {/* Icon */}
+                    <div className={`w-12 h-12 ${value.iconBg} rounded-xl flex items-center justify-center mb-3 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 mx-auto`}>
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-base font-bold text-forest-700 mb-2 text-center">{value.title}</h3>
+
+                    {/* Description */}
+                    <p className="text-xs text-neutral-600 text-center leading-relaxed">{value.description}</p>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-base font-bold text-forest-700 mb-2 text-center">{value.title}</h3>
-
-                  {/* Description */}
-                  <p className="text-xs text-neutral-600 text-center leading-relaxed">{value.description}</p>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -262,91 +267,96 @@ export default function BrandPage() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
-          <div className="text-center mb-12 animate-fade-in">
-            <div className="inline-block bg-primary-500/20 backdrop-blur-sm border border-primary-400/30 rounded-full px-4 py-2 mb-4">
-              <span className="text-primary-300 text-sm font-medium">Personal Journey</span>
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <div className="inline-block bg-primary-500/20 backdrop-blur-sm border border-primary-400/30 rounded-full px-4 py-2 mb-4">
+                <span className="text-primary-300 text-sm font-medium">Personal Journey</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Why I Created CUBES
+              </h2>
+              <p className="text-cream-200 text-lg max-w-2xl mx-auto">
+                From frustration to innovation—one evening that changed everything
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why I Created CUBES
-            </h2>
-            <p className="text-cream-200 text-lg max-w-2xl mx-auto">
-              From frustration to innovation—one evening that changed everything
-            </p>
-          </div>
+          </ScrollReveal>
 
           {/* Journey Timeline - Horizontal on Desktop, Vertical on Mobile */}
           <div className="grid md:grid-cols-4 gap-6 mb-12">
             {journeySteps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div 
-                  key={index}
-                  className={`group relative animate-fade-in-up delay-${(index + 1) * 100}`}
-                >
-                  {/* Timeline connector (desktop) */}
-                  {index < journeySteps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary-400 to-transparent"></div>
-                  )}
+                <ScrollReveal key={index} delay={index * 100} direction="up">
+                  <div 
+                    className="group relative"
+                  >
+                    {/* Timeline connector (desktop) */}
+                    {index < journeySteps.length - 1 && (
+                      <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary-400 to-transparent"></div>
+                    )}
 
-                  {/* Card */}
-                  <div className="bg-forest-600/50 backdrop-blur-sm rounded-2xl p-6 border border-forest-500/30 hover:bg-forest-500/50 transition-all duration-300 hover:transform hover:scale-105 h-full">
-                    {/* Icon & Emotion */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                        <Icon className="w-5 h-5 text-white" />
+                    {/* Card */}
+                    <div className="bg-forest-600/50 backdrop-blur-sm rounded-2xl p-6 border border-forest-500/30 hover:bg-forest-500/50 transition-all duration-300 hover:transform hover:scale-105 h-full">
+                      {/* Icon & Emotion */}
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                          <Icon className="w-5 h-5 text-white" />
+                        </div>
+                        <div className="text-3xl">{step.emotion}</div>
                       </div>
-                      <div className="text-3xl">{step.emotion}</div>
-                    </div>
 
-                    {/* Phase Label */}
-                    <div className="text-xs font-semibold text-primary-300 uppercase tracking-wide mb-2">
-                      {step.phase}
-                    </div>
+                      {/* Phase Label */}
+                      <div className="text-xs font-semibold text-primary-300 uppercase tracking-wide mb-2">
+                        {step.phase}
+                      </div>
 
-                    {/* Story */}
-                    <p className="text-sm text-cream-200 leading-relaxed">
-                      {step.story}
-                    </p>
+                      {/* Story */}
+                      <p className="text-sm text-cream-200 leading-relaxed">
+                        {step.story}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
 
           {/* Founder Quote Card */}
-          <div className="max-w-4xl mx-auto animate-fade-in-scale delay-500">
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-10 border border-white/20">
-              <div className="flex items-start gap-6">
-                {/* Founder Photo */}
-                <div className="hidden md:block flex-shrink-0">
-                  <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-lg ring-2 ring-white/30">
-                    <Image
-                      src="/images/kiran_ceo.png"
-                      alt="Kiran, Founder & CEO"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
+          <ScrollReveal delay={400}>
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-10 border border-white/20">
+                <div className="flex items-start gap-6">
+                  {/* Founder Photo */}
+                  <div className="hidden md:block flex-shrink-0">
+                    <div className="relative w-20 h-20 rounded-2xl overflow-hidden shadow-lg ring-2 ring-white/30">
+                      <Image
+                        src="/images/kiran_ceo.png"
+                        alt="Kiran, Founder & CEO"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex-1">
-                  <p className="text-lg md:text-xl text-cream-100 leading-relaxed mb-6 italic">
-                    &ldquo;CUBES isn&apos;t just a product; it&apos;s a solution to a problem I lived. 
-                    My hope is that CUBES will make it easier for you to enjoy healthy, delicious, 
-                    home-cooked meals—<span className="text-primary-300 font-semibold">without the hassle that kept me from cooking</span> in the first place.&rdquo;
-                  </p>
+                  <div className="flex-1">
+                    <p className="text-lg md:text-xl text-cream-100 leading-relaxed mb-6 italic">
+                      &ldquo;CUBES isn&apos;t just a product; it&apos;s a solution to a problem I lived. 
+                      My hope is that CUBES will make it easier for you to enjoy healthy, delicious, 
+                      home-cooked meals—<span className="text-primary-300 font-semibold">without the hassle that kept me from cooking</span> in the first place.&rdquo;
+                    </p>
 
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <div className="font-bold text-white text-lg">Kiran</div>
-                      <div className="text-cream-300 text-sm">Founder & CEO, CUBES</div>
+                    <div className="flex items-center gap-4">
+                      <div>
+                        <div className="font-bold text-white text-lg">Kiran</div>
+                        <div className="text-cream-300 text-sm">Founder & CEO, CUBES</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
